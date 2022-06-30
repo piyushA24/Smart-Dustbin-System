@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <link rel="stylesheet" href="/css/home.css"/>
+    
+    <title>Smart Dustbin</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script>
+      $(document).ready(function () {
+          // Hide the div
+          $("#options").hide();
+          // Show the div after 5s
+          $("#options").delay(1500).fadeIn(500);  
+      });    
+    </script>
+
+  </head>
+  <body>
+    <header id = "head">
+      <h1>Smart Dustbin Management System</h1>
+    </header>
+    <div id = "login-box">
+        <div id = "dustbin"><img src = "/images/Dustbin-Image.jpg" class = "animate__animated animate__backInLeft"></div>
+        <div id = "options">
+          <form action = "/startMon" method = "get">
+          <div><button class = "glow-on-hover sub-btn" style = "margin-top: 20%" >Start Monitoring</button></div>
+        </form>
+          <form action = "/viewBin" method = "get">
+          <div><button class = "glow-on-hover sub-btn">View Installed Bins</button></div>
+          </form>
+          <form action = "/viewVan" method = "get">
+          <div><button class = "glow-on-hover sub-btn">View Active Vans</button></div>
+        </form>
+          <form action = "/newBin" method = "get">
+          <div><button class = "glow-on-hover sub-btn">Register New Bin</button></div>
+          </form>
+          <form action = "/newVan" method = "get">
+          <div><button class = "glow-on-hover sub-btn">Register New Van</button></div>
+        </form>
+        <form action = "/startMon/config" method = "get">
+          <div><button class = "glow-on-hover sub-btn">Configure Sensors</button></div>
+        </form>
+        </div>
+    <div>
+  </body>
+</html>

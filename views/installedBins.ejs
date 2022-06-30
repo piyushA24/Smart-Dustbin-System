@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/installedBins.css" />
+    <script
+      src="https://kit.fontawesome.com/7e040b0fe5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Installed Bins</title>
+  </head>
+  <body>
+    <h1 id="header">
+      <span>
+        <i class="fas fa-trash"></i>
+      </span>
+      <span> Installed Bins </span>
+      <span
+        ><a href="http://localhost:8000" style="font-size: 15px">Home</a></span
+      >
+    </h1>
+
+    <div id="portfolio-container">
+      <% for (let i of bin_list) { %>
+      <div class="portfolio-image-container">
+        <table id="table">
+          <tr>
+            <td>BinID:</td>
+            <td><%= i._id %></td>
+          </tr>
+          <tr>
+            <td>Location:</td>
+            <td><%= i.Location %></td>
+          </tr>
+          <tr>
+            <td>VanID:</td>
+            <td><%= i.VanID %></td>
+          </tr>
+          <tr>
+            <td>Type:</td>
+            <td><%= i.Type %></td>
+          </tr>
+          <tr>
+            <td>% Filled:</td>
+            <td><%= i.perFilled %></td>
+          </tr>
+        </table>
+        <div class="delete-button">
+          <a href="/viewBin/delete-bin/?id=<%= i._id %>"> Remove Dustbin</a>
+          <br />
+          <a href="/viewBin/update-Van/?id=<%= i._id %>"> Update VanID</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/activeVans.css" />
+    <script
+      src="https://kit.fontawesome.com/7e040b0fe5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Active Vans</title>
+  </head>
+  <body>
+    <h1 id="header">
+      <span>
+        <i class="fas fa-car"></i>
+      </span>
+      <span> Active Vans </span>
+      <span
+        ><a href="http://localhost:8000" style="font-size: 15px">Home</a></span
+      >
+    </h1>
+    <div id="portfolio-container">
+      <% for (let i of van_list) { %>
+      <div class="portfolio-image-container">
+        <table id="table">
+          <tr>
+            <td>VanID:</td>
+            <td><%= i.VanId %></td>
+          </tr>
+          <tr>
+            <td>DriverName:</td>
+            <td><%= i.DriverName %></td>
+          </tr>
+          <tr>
+            <td>Mail Id:</td>
+            <td><%= i.mailId %></td>
+          </tr>
+          <% var cnt = 0; %> <% for(let j of bin_list) { %> <% if(j.VanID ==
+          i.VanId) { %> <% cnt++; %> <% } %> <% } %>
+          <td>Bin Cnt:</td>
+          <td><%= cnt %></td>
+        </table>
+        <div class="delete-button">
+          <a href="/viewVan/delete-van/?id=<%= i._id %>">Remove Van</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

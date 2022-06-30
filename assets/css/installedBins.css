@@ -1,0 +1,49 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+#header {
+  padding-top: 30px;
+  color: #2857a4;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#portfolio-container {
+  margin: auto;
+  display: flex;
+  width: 80vw;
+  height: 82vh;
+  flex-wrap: wrap;
+  padding: 0 50px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.portfolio-image-container {
+  max-width: 400px;
+  min-width: 300px;
+  margin: 15px;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #faf9f6;
+  position: relative;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#table {
+  text-align: center;
+}
+
+.delete-button {
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}

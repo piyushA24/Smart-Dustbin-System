@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/startMon.css"">
+    <script
+      src="https://kit.fontawesome.com/7e040b0fe5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Status</title>
+  </head>
+  <body>
+    <h1 id="header">
+      <span>
+        <i class="fas fa-trash"></i>
+      </span>
+      <span> Status </span>
+      <span
+        ><a href="http://localhost:8000" style="font-size: 15px">Home</a></span
+      >
+    </h1>
+    <section>
+      <h3 id="section-header">Need To Be Cleaned</h3>
+      <hr />
+      <div id="portfolio-container">
+        <% for (let i of bin_list) { %> <% if(i.perFilled >= small_req ) { %>
+        <div class="portfolio-image-container">
+          <table id="table">
+            <tr>
+              <td>BinID:</td>
+              <td><%= i._id %></td>
+            </tr>
+            <tr>
+              <td>Location:</td>
+              <td><%= i.Location %></td>
+            </tr>
+            <tr>
+              <td>VanID:</td>
+              <td><%= i.VanID %></td>
+            </tr>
+            <tr>
+              <td>Type:</td>
+              <td><%= i.Type %></td>
+            </tr>
+            <tr>
+              <td>% Filled:</td>
+              <td><%= i.perFilled %></td>
+            </tr>
+          </table>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </section>
+    <section>
+      <h3 id="section-header">Overdue</h3>
+      <hr />
+      <div id="portfolio-container">
+        <% for (let i of bin_list) { %> <% if(i.perFilled >= large_req) { %>
+        <div class="portfolio-image-container">
+          <table id="table">
+            <tr>
+              <td>BinID:</td>
+              <td><%= i._id %></td>
+            </tr>
+            <tr>
+              <td>Location:</td>
+              <td><%= i.Location %></td>
+            </tr>
+            <tr>
+              <td>VanID:</td>
+              <td><%= i.VanID %></td>
+            </tr>
+            <tr>
+              <td>Type:</td>
+              <td><%= i.Type %></td>
+            </tr>
+            <tr>
+              <td>% Filled:</td>
+              <td><%= i.perFilled %></td>
+            </tr>
+          </table>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </section>
+    <div id="view">
+      <span
+        >Check All Bin?
+        <a href="http://localhost:8000/viewBin">View All Bin Details</a></span
+      >
+    </div>
+  </body>
+</html>
